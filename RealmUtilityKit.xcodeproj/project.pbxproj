@@ -34,6 +34,7 @@
 		21914AC21E28CF0F0062CD81 /* RealmFetchedResultsControllerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21914AC11E28CF0F0062CD81 /* RealmFetchedResultsControllerable.swift */; };
 		21914AC41E28CF260062CD81 /* RealmFetchedResultsSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21914AC31E28CF260062CD81 /* RealmFetchedResultsSectionInfo.swift */; };
 		21914AC61E28CF5E0062CD81 /* RealmFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21914AC51E28CF5E0062CD81 /* RealmFetchedResultsController.swift */; };
+		21914AD21E28F1900062CD81 /* EntityValueAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21914AD11E28F1900062CD81 /* EntityValueAccessible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		21914AC11E28CF0F0062CD81 /* RealmFetchedResultsControllerable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmFetchedResultsControllerable.swift; sourceTree = "<group>"; };
 		21914AC31E28CF260062CD81 /* RealmFetchedResultsSectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmFetchedResultsSectionInfo.swift; sourceTree = "<group>"; };
 		21914AC51E28CF5E0062CD81 /* RealmFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmFetchedResultsController.swift; sourceTree = "<group>"; };
+		21914AD11E28F1900062CD81 /* EntityValueAccessible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityValueAccessible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		21914A9C1E28BF150062CD81 /* RealmUtilityKit */ = {
 			isa = PBXGroup;
 			children = (
+				21914AD11E28F1900062CD81 /* EntityValueAccessible.swift */,
 				21914AB21E28CC700062CD81 /* RealmContainer.swift */,
 				21914ABF1E28CF020062CD81 /* RealmDynamicSectionGenrator.swift */,
 				21914AC51E28CF5E0062CD81 /* RealmFetchedResultsController.swift */,
@@ -302,6 +305,7 @@
 				21914ABD1E28CCB00062CD81 /* RealmUtility.swift in Sources */,
 				21914AC01E28CF020062CD81 /* RealmDynamicSectionGenrator.swift in Sources */,
 				21914AB31E28CC700062CD81 /* RealmContainer.swift in Sources */,
+				21914AD21E28F1900062CD81 /* EntityValueAccessible.swift in Sources */,
 				21914AC61E28CF5E0062CD81 /* RealmFetchedResultsController.swift in Sources */,
 				21914AC41E28CF260062CD81 /* RealmFetchedResultsSectionInfo.swift in Sources */,
 				21914AB51E28CC7D0062CD81 /* RealmFetchRequest.swift in Sources */,
