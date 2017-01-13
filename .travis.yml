@@ -3,6 +3,7 @@ osx_image: xcode8.2
 cache:
   directories:
     - vendor/bundle
+    - Carthage
 before_install:
   - brew update
 install:
@@ -10,6 +11,6 @@ install:
   - brew upgrade carthage || brew install carthage
   - gem install xcpretty
 before_script:
-  - carthage bootstrap
+  - travis_wait 120 carthage bootstrap
 script:
   - swiftlint
