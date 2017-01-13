@@ -1,5 +1,5 @@
 //
-//  RealmFileStore.swift
+//  FileStore.swift
 //  RealmUtilityKit
 //
 //  Created by Satoshi Ohki on 2016/11/06.
@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 /// This realm has File data storage.
-public struct RealmFileStore: RealmContainer {
+public struct FileStore: Container {
 
     public fileprivate(set) var configuration: Realm.Configuration
 

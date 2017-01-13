@@ -1,5 +1,5 @@
 //
-//  RealmMemoryStore.swift
+//  MemoryStore.swift
 //  RealmUtilityKit
 //
 //  Created by Satoshi Ohki on 2016/12/03.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-public struct RealmMemoryStore: RealmContainer {
+public struct MemoryStore: Container {
 
     public fileprivate(set) var configuration: Realm.Configuration
 

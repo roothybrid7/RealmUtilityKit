@@ -15,15 +15,15 @@ fileprivate struct PredicateTemplate {
     static let equals = NSPredicate(format: "$\(attrKey) == $\(valueKey)")
 }
 
-open class RealmFetchedResultsController<ResultType: RealmSwift.Object>: RealmFetchedResultsControllerable {
+open class FetchedResultsController<ResultType: RealmSwift.Object>: FetchedResultsControllerable {
     public typealias Entity = ResultType
 
-    public fileprivate(set) var fetchRequest: RealmFetchRequest<ResultType>
-    public fileprivate(set) var dynamicSections: [RealmFetchedResultsSection<ResultType>]?
-    public fileprivate(set) var dynamicSectionGenerator: RealmDynamicSectionGeneratorable?
+    public fileprivate(set) var fetchRequest: FetchRequest<ResultType>
+    public fileprivate(set) var dynamicSections: [FetchedResultsSection<ResultType>]?
+    public fileprivate(set) var dynamicSectionGenerator: DynamicSectionGeneratorable?
     public fileprivate(set) var results: Results<ResultType>!
 
-    public required init(fetchRequest: RealmFetchRequest<ResultType>, dynamicSectionGenerator: RealmDynamicSectionGeneratorable? = nil) {
+    public required init(fetchRequest: FetchRequest<ResultType>, dynamicSectionGenerator: DynamicSectionGeneratorable? = nil) {
         self.fetchRequest = fetchRequest
         self.dynamicSectionGenerator = dynamicSectionGenerator
     }
@@ -38,7 +38,7 @@ open class RealmFetchedResultsController<ResultType: RealmSwift.Object>: RealmFe
             sectionValues = (sectionValues as NSArray).sortedArray(using: [sortDescriptor])
         }
         dynamicSections = sectionValues.map {
-            RealmFetchedResultsSection(
+            FetchedResultsSection(
                 name: dynamicSectionGenerator.nameConverter($0),
                 results: results.filter(
                     PredicateTemplate.equals.withSubstitutionVariables([

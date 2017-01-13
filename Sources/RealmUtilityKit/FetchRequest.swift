@@ -1,5 +1,5 @@
 //
-//  RealmFetchRequest.swift
+//  FetchRequest.swift
 //  RealmUtilityKit
 //
 //  Created by Satoshi Ohki on 2016/12/15.
@@ -9,22 +9,22 @@
 import Foundation
 import RealmSwift
 
-public protocol RealmFetchRequestable {
+public protocol FetchRequestable {
     associatedtype Entity: RealmSwift.Object
     var predicate: NSPredicate? { get set }
-    var container: RealmContainer { get set }
+    var container: Container { get set }
     var sortDescriptors: [SortDescriptor]? { get set }
     func execute() throws -> Results<Entity>
 }
 
-open class RealmFetchRequest<ResultType: RealmSwift.Object>: RealmFetchRequestable {
+open class FetchRequest<ResultType: RealmSwift.Object>: FetchRequestable {
     public typealias Entity = ResultType
 
     public var predicate: NSPredicate?
-    public var container: RealmContainer
+    public var container: Container
     public var sortDescriptors: [SortDescriptor]?
 
-    public init(container: RealmContainer) {
+    public init(container: Container) {
         self.container = container
     }
 

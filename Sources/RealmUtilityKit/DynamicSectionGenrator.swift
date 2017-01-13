@@ -1,5 +1,5 @@
 //
-//  RealmDynamicSectionGenrator.swift
+//  DynamicSectionGenrator.swift
 //  RealmUtilityKit
 //
 //  Created by Satoshi Ohki on 2016/12/24.
@@ -9,13 +9,13 @@
 import Foundation
 import RealmSwift
 
-public protocol RealmDynamicSectionGeneratorable {
+public protocol DynamicSectionGeneratorable {
     var keyPath: String { get }
     var sortDescriptor: NSSortDescriptor? { get }
     var nameConverter: ((Any) -> String) { get }
 }
 
-public struct RealmDynamicSectionGenerator: RealmDynamicSectionGeneratorable {
+public struct DynamicSectionGenerator: DynamicSectionGeneratorable {
     public let keyPath: String
     public let sortDescriptor: NSSortDescriptor?
     public let nameConverter: ((Any) -> String)

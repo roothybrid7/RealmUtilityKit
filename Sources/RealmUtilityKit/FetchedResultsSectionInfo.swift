@@ -1,5 +1,5 @@
 //
-//  RealmFetchedResultsSectionInfo.swift
+//  FetchedResultsSectionInfo.swift
 //  RealmUtilityKit
 //
 //  Created by Satoshi Ohki on 2016/12/24.
@@ -9,13 +9,13 @@
 import Foundation
 import RealmSwift
 
-public protocol RealmFetchedResultsSectionInfo {
+public protocol FetchedResultsSectionInfo {
     associatedtype Entity: RealmSwift.Object
     var name: String { get }
     var results: Results<Entity> { get }
 }
 
-public final class RealmFetchedResultsSection<ResultType: RealmSwift.Object>: RealmFetchedResultsSectionInfo {
+public final class FetchedResultsSection<ResultType: RealmSwift.Object>: FetchedResultsSectionInfo {
     public typealias Entity = ResultType
 
     public let name: String
