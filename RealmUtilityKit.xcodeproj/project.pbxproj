@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21914A861E28BCB40062CD81 /* RealmUtilityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21914A7C1E28BCB40062CD81 /* RealmUtilityKit.framework */; };
 		21914A9F1E28BF2F0062CD81 /* RealmUtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 21914A9E1E28BF150062CD81 /* RealmUtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21914AA91E28CADB0062CD81 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21914AA71E28CADB0062CD81 /* Realm.framework */; };
+		21914AAA1E28CADB0062CD81 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21914AA81E28CADB0062CD81 /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		21914A9A1E28BF0B0062CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21914A9D1E28BF150062CD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21914A9E1E28BF150062CD81 /* RealmUtilityKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmUtilityKit.h; sourceTree = "<group>"; };
+		21914AA71E28CADB0062CD81 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		21914AA81E28CADB0062CD81 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21914AA91E28CADB0062CD81 /* Realm.framework in Frameworks */,
+				21914AAA1E28CADB0062CD81 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 				21914A971E28BE980062CD81 /* Sources */,
 				21914A981E28BEB80062CD81 /* Tests */,
 				21914A7D1E28BCB40062CD81 /* Products */,
+				21914AA61E28CADA0062CD81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +104,15 @@
 				21914A9E1E28BF150062CD81 /* RealmUtilityKit.h */,
 			);
 			path = RealmUtilityKit;
+			sourceTree = "<group>";
+		};
+		21914AA61E28CADA0062CD81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21914AA71E28CADB0062CD81 /* Realm.framework */,
+				21914AA81E28CADB0062CD81 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +176,7 @@
 				TargetAttributes = {
 					21914A7B1E28BCB40062CD81 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
 					21914A841E28BCB40062CD81 = {
@@ -332,12 +349,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/RealmUtilityKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -345,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.roothy.RealmUtilityKit;
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -353,12 +376,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/RealmUtilityKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
