@@ -1,0 +1,15 @@
+language: objective-c
+osx_image: xcode8.2
+cache:
+  directories:
+    - vendor/bundle
+before_install:
+  - brew update
+install:
+  - brew upgrade swiftlint || brew install swiftlint
+  - brew upgrade carthage || brew install carthage
+  - gem install xcpretty
+before_script:
+  - carthage bootstrap
+script:
+  - swiftlint
