@@ -561,6 +561,7 @@
 				21914AB01E28CC4D0062CD81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
