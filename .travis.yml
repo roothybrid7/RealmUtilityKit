@@ -1,0 +1,31 @@
+language: objective-c
+osx_image: xcode8.2
+cache:
+  directories:
+    - vendor/bundle
+    - Carthage
+before_install:
+  - brew update
+install:
+  - brew upgrade swiftlint || brew install swiftlint
+  - brew upgrade carthage || brew install carthage
+  - gem install xcpretty
+before_script:
+  - travis_wait 120 carthage bootstrap
+script:
+  - swiftlint
+before_deploy:
+  - ./bin/archive.sh
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: "DLs61JvhSp3KiNC+6aH29t83aXePWfcrciTpLiLYxwuOXGTaYQFiOjneGIAyh1K9U8copWv4NF0y9I46E3mojNXUgqLvP95uFQcQPb2+z2VdWYWm1V8TvBrCmMUkAOtoGruySY8P4iy9gNeUbmpC9r2eo+oFtBsAMCebZ0ulHXkim1LQoXLDPgwEMxMskj7EdE0VQIDAeVKBKI8UNb1fTN8M3rsl2dnAhUfYo+cwrCjVK5Td5K86eguJnbj+svwzocp5NHL9h6VQnB+NV1NAEN3w1kSWU8ORxXoWojFEARnw2KsLhm+FbSUqF+WUZR166PB4XLDoFlIOZ7LCEx0H3Ti7zjD/TnHB5qXXjWz0BILIoflM+3x5w2louKANQ8YFw5s/05heWVeSFa2kra51Mt0408Whzw1xuJ667puP+1h0qboLeHvPRGDJ66AXpClewr2dsZVfBMvtdPaKCJdblfkKKfik+Dm8nQEXLy8/dJrRJ10hq9VPs8LXawxZbn89Uft/QbMZm273c5RqAU3rugRYOzrE98L8zHVNSfzSTVQt/aCLgxa4TXrUvviK6p/EjT7LVFAxDrqeKaSHx+rduC1zAMm59PFfpDkMBKzvTcfVkMatggU/prCx2JZeQCf2pMPL3Ureep87npJjwkvYrlkCtI09wKFBfjCCnVPKuZE="
+  file_glob: true
+  file: 'build/RealmUtilityKit-*.framework.tar.gz'
+  on:
+    all_branches: true
+    tags: true
+env:
+  global:
+    secure: cY0CMndGpRbsXINxrHWCnsGS659LDxguMsmm6sX5L7fecgAhLTj5K6iyL8SYw9Hgg7i8NZjbi7zU9f/jkdh0mpyDV106NRTOsmwo+KYBsBYfckCyDd49DKK8mJ9Cqwq0WsM+WLKtx3nxLjdo02NqaaWWJqULIARnzIpM3vvxyGYNvZMGtjAS1WnctLVv0riIC6YMEVnbtiGebahQCFA5LCVZPHEE81VEp4A+3IHAC/uuX/8B6B7DWhF9OuyELuO8TTtlVVNKRJTY10F8Z//MTw1dLJmYce8mraGwG0YMiqVuvSH41cPZ8LGH2Mts2XfpJbL0TbaeyzP+TlvJPip/W2Karcmhv+v51AzpHYSbLF5rz/dgY9IPPPWv1sAFFIpBhAhJ+u9krwJOGyDGrkDofaaLj8ZCmuUCJh58TIB72yDZAObkeOkg4RQk1B8SxGJ3faQ52t6psZS3zlo5WbUY8K8BzNSbT1jDz/Cx11GOAPIHcnQ29A+vOhK3KI610LMNoNoKjRLd0FCuXiw39FpcRqZ69M2HHxMFMQn5LP1PPzYExNLJvCIr17BxDxpUNbzldg6YNJR+4xzFgk8xqTJmDJQSlSrcCXutTm8OT5SynY4LdUYF2Gw4SOIgnd1y3BICexcBicQ48P5QqKMNYN33xeX+JQmx+JM8SJr3qw9is18=
